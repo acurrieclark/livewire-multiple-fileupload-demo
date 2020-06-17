@@ -9,10 +9,14 @@ class Test extends Component
 {
     use WithFileUploads;
 
-    public $file;
+    public $files = [];
 
     public function render()
     {
         return view('livewire.test');
+    }
+
+    public function removeFile($key) {
+        unset($this->files[$key]);
     }
 }
